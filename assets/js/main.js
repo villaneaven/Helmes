@@ -1,8 +1,36 @@
-/*
-	Phantom by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+$(document).ready(function(){
+    
+    $('.primary').click(function(event){
+        console.log('Clicked Button')
+        
+        var subject = $('.subject').val()
+        var email = $('.email').val()
+        var message = $('.message').val()
+        var statusElm = $('.status')
+        statusElm.empty()
+        
+        if(email.length > 5 && email.includes('@') && email.includes('.')){
+            
+            statusElm.append('<div>Email is valid</div>')
+        }else {
+            event.preventDefault()
+            statusElm.append('<div>Email is invalid</div>')
+        }
+        if(subject.length >- 2){
+            statusElm.append('<div>Subject is valid</div>')
+        }else{
+            event.preventDefault()
+            statusElm.append('<div>Subject is invalid</div>')
+        }
+        if(message.length >= 10){
+            statusElm.append('<div>Message is valid</div>')
+        }else{
+            event.preventDefault()
+            statusElm.append('<div>Message is invalid</div>')
+        }
+    })
+    
+})
 var colors = new Array(
   [62,35,255],
   [60,255,60],
