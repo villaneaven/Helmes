@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 $(document).ready(function(){
     
     $('.primary').click(function(event){
